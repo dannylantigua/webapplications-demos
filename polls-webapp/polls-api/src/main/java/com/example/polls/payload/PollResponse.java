@@ -9,7 +9,7 @@ public class PollResponse {
 
     private Long id;
     private String question;
-    private List<ChoiceRespone> choices;
+    private List<ChoiceResponse> choices;
     private UserSummary createdBy;
     private Instant creationDateTime;
     private Instant expirationDateTime;
@@ -35,11 +35,11 @@ public class PollResponse {
         this.question = question;
     }
 
-    public List<ChoiceRespone> getChoices() {
+    public List<ChoiceResponse> getChoices() {
         return choices;
     }
 
-    public void setChoices(List<ChoiceRespone> choices) {
+    public void setChoices(List<ChoiceResponse> choices) {
         this.choices = choices;
     }
 
