@@ -45,5 +45,6 @@
 			th:errors="*{ccNumber}">CC CVV Error</span> <br /> <input type="submit"
 			value="Submit order" />
 	</form>
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
 </body>
 </html>

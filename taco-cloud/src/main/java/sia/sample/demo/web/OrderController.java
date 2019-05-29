@@ -10,10 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import sia.sample.demo.Order;
+import sia.sample.demo.User;
 import sia.sample.demo.data.OrderRepository;
+import sia.sample.demo.data.UserRepository;
 
 @Slf4j
 @Controller
@@ -35,10 +39,13 @@ public class OrderController {
 
     @PostMapping
     public String processOrder(@Valid Order order, Errors errors,
-            SessionStatus sessionStatus) {
+            SessionStatus sessionStatus,
+            @AuthenticationPrincipal User user) {
         if (errors.hasErrors()) {
             return "orderForm";
         }
+        
+        order.setUser(user);
 
         orderRepo.save(order);
         sessionStatus.setComplete();

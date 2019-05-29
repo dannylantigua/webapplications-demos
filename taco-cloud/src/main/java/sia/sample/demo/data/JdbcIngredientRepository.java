@@ -2,6 +2,7 @@ package sia.sample.demo.data;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import sia.sample.demo.Ingredient;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,5 +45,50 @@ public class JdbcIngredientRepository implements IngredientRepository {
                 rs.getString("id"),
                 rs.getString("name"),
                 Ingredient.Type.valueOf(rs.getString("type")));
+    }
+
+    @Override
+    public <S extends Ingredient> Iterable<S> saveAll(Iterable<S> itrbl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Optional<Ingredient> findById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean existsById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Iterable<Ingredient> findAllById(Iterable<String> itrbl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public long count() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void delete(Ingredient t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Ingredient> itrbl) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void deleteAll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
